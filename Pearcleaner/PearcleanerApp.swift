@@ -118,7 +118,13 @@ struct PearcleanerApp: App {
                     }, icon: selectedMenubarIcon)
                 }
 
-
+                
+                if !hasLaunched {
+                    let _ = checkAndRequestFullDiskAccess(appState: appState, skipAlert: true)
+                    let _ = checkAndRequestAccessibilityAccess(appState: appState)
+                    hasLaunched = true
+                }
+                
 #if !DEBUG
                 Task {
 
