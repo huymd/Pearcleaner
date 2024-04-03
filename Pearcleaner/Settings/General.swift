@@ -95,9 +95,6 @@ struct GeneralSettingsTab: View {
                 Divider()
                     .padding()
 
-
-
-
                 HStack() {
                     Text("Permissions").font(.title2)
                     Spacer()
@@ -123,6 +120,7 @@ struct GeneralSettingsTab: View {
                         }
                     }
                     .buttonStyle(SimpleButtonStyle(icon: "folder", help: "View disk permissions pane", color: Color("mode")))
+                    .frame(width: 40, height: 40)
 
                 }
                 .padding(5)
@@ -148,6 +146,7 @@ struct GeneralSettingsTab: View {
                         }
                     }
                     .buttonStyle(SimpleButtonStyle(icon: "folder", help: "View accessibility permissions pane", color: Color("mode")))
+                    .frame(width: 40, height: 40)
 
                 }
                 .padding(5)
@@ -192,18 +191,12 @@ struct GeneralSettingsTab: View {
                 }
                 .padding(5)
                 .padding(.leading)
-
-
-
-
-
-
-
+                
                 Spacer()
             }
             .onAppear {
-                diskStatus = checkAndRequestFullDiskAccess(appState: appState, skipAlert: true)
-                accessStatus = checkAndRequestAccessibilityAccess(appState: appState)
+                //diskStatus = checkAndRequestFullDiskAccess(appState: appState, skipAlert: true)
+                //accessStatus = checkAndRequestAccessibilityAccess(appState: appState)
             }
 
         }
