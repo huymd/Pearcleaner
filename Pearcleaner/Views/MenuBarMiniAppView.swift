@@ -114,7 +114,7 @@ struct MenuBarMiniAppView: View {
                                     Button("Quit") {
                                         NSApp.terminate(nil)
                                     }
-                                    .buttonStyle(SimpleButtonStyle(icon: "x.circle.fill", label: "Quit Pearcleaner", help: "Quit Pearcleaner", color: Color("mode")))
+                                    .buttonStyle(SimpleButtonStyle(icon: "x.circle.fill", label: "Quit Cyclear", help: "Quit Cyclear", color: Color("mode")))
                                 }
                                 .padding()
                                 .background(

@@ -35,13 +35,13 @@ struct SettingsView: View {
                     Label(CurrentTabView.folders.title, systemImage: "folder")
                 }
                 .tag(CurrentTabView.interface)
-
+            /*
             UpdateSettingsTab(showFeature: $showFeature)
                 .tabItem {
                     Label(CurrentTabView.update.title, systemImage: "cloud")
                 }
                 .tag(CurrentTabView.update)
-
+            */
             AboutSettingsTab()
                 .tabItem {
                     Label(CurrentTabView.about.title, systemImage: "info.circle")

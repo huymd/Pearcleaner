@@ -53,7 +53,7 @@ func resizeWindowAuto(windowSettings: WindowSettings, title: String) {
 func checkFullDiskAccessForApp() -> Bool {
     let process = Process()
     process.launchPath = "/usr/bin/sqlite3"
-    process.arguments = ["/Library/Application Support/com.apple.TCC/TCC.db", "select client from access where auth_value and service = \"kTCCServiceSystemPolicyAllFiles\" and client = \"com.alienator88.Pearcleaner\""]
+    process.arguments = ["/Library/Application Support/com.apple.TCC/TCC.db", "select client from access where auth_value and service = \"kTCCServiceSystemPolicyAllFiles\" and client = \"com.baominh.clearappdata\""]
     
     let pipe = Pipe()
     let pipeErr = Pipe()
@@ -85,7 +85,7 @@ func checkAndRequestFullDiskAccess(appState: AppState, skipAlert: Bool = false) 
 
     let process = Process()
     process.launchPath = "/usr/bin/sqlite3"
-    process.arguments = ["/Library/Application Support/com.apple.TCC/TCC.db", "select client from access where auth_value and service = \"kTCCServiceSystemPolicyAllFiles\" and client = \"com.alienator88.Pearcleaner\""]
+    process.arguments = ["/Library/Application Support/com.apple.TCC/TCC.db", "select client from access where auth_value and service = \"kTCCServiceSystemPolicyAllFiles\" and client = \"com.baominh.clearappdata\""]
     
     let pipe = Pipe()
     let pipeErr = Pipe()
@@ -192,7 +192,7 @@ func isDarkModeEnabled() -> Bool {
 
 // Check if Pearcleaner has any windows open
 func hasWindowOpen() -> Bool {
-    for window in NSApp.windows where window.title == "Pearcleaner" {
+    for window in NSApp.windows where window.title == "Cyclear" {
         return true
     }
     return false
@@ -441,7 +441,7 @@ extension FileManager {
 // --- Extend print command to also output to the Console ---
 func printOS(_ items: Any..., separator: String = " ", terminator: String = "\n") {
     let message = items.map { "\($0)" }.joined(separator: separator)
-    let log = OSLog(subsystem: "pearcleaner", category: "Application")
+    let log = OSLog(subsystem: "Cyclear", category: "Application")
     os_log("%@", log: log, type: .default, message)
 
 }
@@ -557,16 +557,16 @@ func presentAlert(appState: AppState) -> Alert {
     switch appState.alertType {
     case .update:
         return Alert(title: Text("Update Available 🥳"), message: Text("You may choose to install the update now, otherwise you may check again later from Settings"), primaryButton: .default(Text("Install")) {
-            downloadUpdate(appState: appState)
+            //downloadUpdate(appState: appState)
             appState.alertType = .off
         }, secondaryButton: .cancel())
     case .no_update:
-        return Alert(title: Text("No Updates 😌"), message: Text("Pearcleaner is on the latest release available"), primaryButton: .cancel(Text("Okay")), secondaryButton: .default(Text("Force Update")) {
-            downloadUpdate(appState: appState)
+        return Alert(title: Text("No Updates 😌"), message: Text("Cyclear is on the latest release available"), primaryButton: .cancel(Text("Okay")), secondaryButton: .default(Text("Force Update")) {
+            //downloadUpdate(appState: appState)
             appState.alertType = .off
         })
     case .diskAccess:
-        return Alert(title: Text("Permissions"), message: Text("Pearcleaner requires Full Disk and Accessibility permissions. Drag the app into the Full Disk and Accessibility pane to enable or toggle On if already present."), primaryButton: .default(Text("Allow in Settings")) {
+        return Alert(title: Text("Permissions"), message: Text("Cyclear requires Full Disk and Accessibility permissions. Drag the app into the Full Disk and Accessibility pane to enable or toggle On if already present."), primaryButton: .default(Text("Allow in Settings")) {
             if let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_AllFiles") {
                 NSWorkspace.shared.open(url)
             }
@@ -622,12 +622,12 @@ func uninstallPearcleaner(appState: AppState, locations: Locations) {
 // --- Create Application Support folder if it doesn't exist ---
 func ensureApplicationSupportFolderExists(appState: AppState) {
     let fileManager = FileManager.default
-    let supportURL = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!.appendingPathComponent("Pearcleaner")
+    let supportURL = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!.appendingPathComponent("Cyclear")
     
-    // Check to make sure Application Support/Pearcleaner folder exists
+    // Check to make sure Application Support/Cyclear folder exists
     if !fileManager.fileExists(atPath: supportURL.path) {
         try! fileManager.createDirectory(at: supportURL, withIntermediateDirectories: true)
-        printOS("Created Application Support/Pearcleaner folder")
+        printOS("Created Application Support/Cyclear folder")
     }
 }
 
@@ -663,15 +663,15 @@ func writeLog(string: String) {
 func launchctl(load: Bool, completion: @escaping () -> Void = {}) {
     let cmd = load ? "load" : "unload"
 
-    if let plistPath = Bundle.main.path(forResource: "com.alienator88.PearcleanerSentinel", ofType: "plist") {
+    if let plistPath = Bundle.main.path(forResource: "com.baominh.CyclearSentinel", ofType: "plist") {
         var plistContent = try! String(contentsOfFile: plistPath)
-        let executableURL = Bundle.main.bundleURL.appendingPathComponent("Contents/MacOS/PearcleanerSentinel")
+        let executableURL = Bundle.main.bundleURL.appendingPathComponent("Contents/MacOS/CyclearSentinel")
 
         // Replace the placeholder with the actual executable path
         plistContent = plistContent.replacingOccurrences(of: "__EXECUTABLE_PATH__", with: executableURL.path)
 
         // Create a temporary plist file with the updated content
-        let temporaryPlistURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("com.alienator88.PearcleanerSentinel.plist")
+        let temporaryPlistURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("com.baominh.CyclearSentinel.plist")
 
         do {
             try plistContent.write(to: temporaryPlistURL, atomically: true, encoding: .utf8)

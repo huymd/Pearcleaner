@@ -54,7 +54,7 @@ struct UpdateView: View {
             Spacer()
             
             if !isAppInCorrectDirectory {
-                Text("To avoid permission issues, please move Pearcleaner to the \(isUserAdmin ? "/Applications" : "\(home)/Applications") folder before updating!")
+                Text("To avoid permission issues, please move Cyclear to the \(isUserAdmin ? "/Applications" : "\(home)/Applications") folder before updating!")
                     .font(.callout)
                     .foregroundStyle(Color.accentColor)
                     .padding(.horizontal)
@@ -154,7 +154,7 @@ struct NoUpdateView: View {
             Divider()
                 .padding([.horizontal])
             
-            Text("Pearcleaner is on the most current release available, but you may force a re-download of the same version below.")
+            Text("Cyclear is on the most current release available, but you may force a re-download of the same version below.")
                 .font(.body)
                 .lineLimit(3)
                 .multilineTextAlignment(.leading)

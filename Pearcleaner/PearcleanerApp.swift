@@ -127,11 +127,12 @@ struct PearcleanerApp: App {
                     ensureApplicationSupportFolderExists(appState: appState)
 
                     // Check for updates after app launch
+                    /*
                     if diskP {
                         loadGithubReleases(appState: appState)
                         getFeatures(appState: appState, show: $showFeature, features: $features)
                     }
-
+                    */
                     // Check for disk/accessibility permissions just once on initial app launch
                     if !hasLaunched {
                         _ = checkAndRequestFullDiskAccess(appState: appState)
@@ -176,9 +177,6 @@ struct PearcleanerApp: App {
     }
 }
 
-
-
-
 class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
@@ -189,7 +187,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         let menubarEnabled = UserDefaults.standard.bool(forKey: "settings.menubar.enabled")
         if menubarEnabled {
-            findAndHideWindows(named: ["Pearcleaner"])
+            findAndHideWindows(named: ["Cyclear"])
             NSApplication.shared.setActivationPolicy(.accessory)
         }
     }
@@ -201,11 +199,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         if !flag {
             // No visible windows, so let's open a new one
             for window in sender.windows {
-                window.title = "Pearcleaner"
+                window.title = "Cyclear"
                 window.makeKeyAndOrderFront(self)
                 print(windowSettings.loadWindowSettings())
                 updateOnMain(after: 0.1, {
-                    resizeWindowAuto(windowSettings: windowSettings, title: "Pearcleaner")
+                    resizeWindowAuto(windowSettings: windowSettings, title: "Cyclear")
                     print(window.title)
                 })
             }

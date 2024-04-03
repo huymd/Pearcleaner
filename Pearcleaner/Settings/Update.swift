@@ -86,7 +86,7 @@ struct UpdateSettingsTab: View {
                 .buttonStyle(SimpleButtonStyle(icon: "star", help: "Show last feature alert", color: Color("mode")))
 
                 Spacer()
-
+                /*
                 Button(""){
                     loadGithubReleases(appState: appState, manual: true)
                 }
@@ -100,6 +100,7 @@ struct UpdateSettingsTab: View {
                 .buttonStyle(SimpleButtonStyle(icon: "link", help: "View releases on GitHub", color: Color("mode")))
                 
                 Spacer()
+                */
             }
             .padding()
             
@@ -170,7 +171,7 @@ func downloadUpdate(appState: AppState) {
         guard let localURL = localURL else { return }
         
         let fileManager = FileManager.default
-        let destinationURL = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!.appendingPathComponent("Pearcleaner").appendingPathComponent("\(asset.name)")
+        let destinationURL = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!.appendingPathComponent("Cyclear").appendingPathComponent("\(asset.name)")
 
         do {
             if fileManager.fileExists(atPath: destinationURL.path) {
@@ -214,7 +215,7 @@ func UnzipAndReplace(DownloadedFileURL fileURL: String, appState: AppState) {
         try fileManager.removeItem(atPath: appBundle)
         
         updateOnMain {
-            appState.progressBar.0 = "Unziping new update file to original Pearcleaner location"
+            appState.progressBar.0 = "Unziping new update file to original Cyclear location"
             appState.progressBar.1 = 0.6
         }
         

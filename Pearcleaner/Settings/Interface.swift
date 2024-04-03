@@ -156,7 +156,7 @@ struct InterfaceSettingsTab: View {
                                         .preferredColorScheme(displayMode.colorScheme)
                                 }
                                 updateOnMain(after: 0.1, {
-                                    resizeWindowAuto(windowSettings: windowSettings, title: "Pearcleaner")
+                                    resizeWindowAuto(windowSettings: windowSettings, title: "Cyclear")
                                 })
                             } else {
                                 if appState.appInfo.appName.isEmpty {
@@ -172,7 +172,7 @@ struct InterfaceSettingsTab: View {
                                         .preferredColorScheme(displayMode.colorScheme)
                                 }
                                 updateOnMain(after: 0.1, {
-                                    resizeWindowAuto(windowSettings: windowSettings, title: "Pearcleaner")
+                                    resizeWindowAuto(windowSettings: windowSettings, title: "Cyclear")
                                 })
                             }
 
@@ -196,7 +196,7 @@ struct InterfaceSettingsTab: View {
                             .foregroundStyle(.gray)
                     }
 
-                    InfoButton(text: "In mini window mode, you can have Pearcleaner startup to the Apps List view or the Drop Target view.", color: nil, label: "")
+                    InfoButton(text: "In mini window mode, you can have Cyclear startup to the Apps List view or the Drop Target view.", color: nil, label: "")
 
                     Spacer()
                     Toggle(isOn: $miniView, label: {
@@ -273,8 +273,8 @@ struct InterfaceSettingsTab: View {
                                     .preferredColorScheme(displayMode.colorScheme)
                             }, icon: selectedMenubarIcon)
                             NSApplication.shared.setActivationPolicy(.accessory)
-                            findAndHideWindows(named: ["Pearcleaner"])
-//                            findAndShowWindows(named: ["Pearcleaner", "Interface"])
+                            findAndHideWindows(named: ["Cyclear"])
+//                            findAndShowWindows(named: ["Cyclear", "Interface"])
                         } else {
                             MenuBarExtraManager.shared.removeMenuBarExtra()
                             NSApplication.shared.setActivationPolicy(.regular)
@@ -287,7 +287,7 @@ struct InterfaceSettingsTab: View {
                                             .environmentObject(fsm)
                                             .preferredColorScheme(displayMode.colorScheme)
                                     }
-                                    resizeWindowAuto(windowSettings: windowSettings, title: "Pearcleaner")
+                                    resizeWindowAuto(windowSettings: windowSettings, title: "Cyclear")
                                 } else {
                                     windowSettings.newWindow {
                                         RegularMode(search: $search, showPopover: $showPopover)
@@ -296,7 +296,7 @@ struct InterfaceSettingsTab: View {
                                             .environmentObject(fsm)
                                             .preferredColorScheme(displayMode.colorScheme)
                                     }
-                                    resizeWindowAuto(windowSettings: windowSettings, title: "Pearcleaner")
+                                    resizeWindowAuto(windowSettings: windowSettings, title: "Cyclear")
                                 }
                             }
 
@@ -320,7 +320,7 @@ struct InterfaceSettingsTab: View {
                             .font(.callout)
                             .foregroundStyle(.gray)
                     }
-                    InfoButton(text: "This setting will affect Pearcleaner whether you're running in menubar mode or regular mode. If you disable menubar icon, you might want to disable this as well so Pearcleaner doesn't start on login.", color: nil, label: "")
+                    InfoButton(text: "This setting will affect Cyclear whether you're running in menubar mode or regular mode. If you disable menubar icon, you might want to disable this as well so Cyclear doesn't start on login.", color: nil, label: "")
                     Spacer()
                     Toggle(isOn: $isLaunchAtLoginEnabled, label: {
                     })
@@ -400,7 +400,7 @@ struct InterfaceSettingsTab: View {
 //                            .font(.callout)
 //                            .foregroundStyle(.gray)
 //                    }
-//                    InfoButton(text: "This setting only affects Pearcleaner when the menubar icon is enabled, otherwise the dock icon will always show", color: nil, label: "")
+//                    InfoButton(text: "This setting only affects Cyclear when the menubar icon is enabled, otherwise the dock icon will always show", color: nil, label: "")
 //                    Spacer()
 //                    Toggle(isOn: $dockEnabled, label: {
 //                    })

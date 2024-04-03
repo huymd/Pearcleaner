@@ -9,6 +9,11 @@ import SwiftUI
 
 struct AboutSettingsTab: View {
     @EnvironmentObject var appState: AppState
+    
+    let description = """
+"Cyclear" is a small application which allows you to thoroughly uninstall unwanted apps. Installing an application distributes many files throughout your System using space of your Hard Drive unnecessarily.
+"Cyclear" finds all these small files and safely deletes them. Simply drop an application onto the "Cyclear" window. It will find for the related files and you can delete them by clicking the delete button.
+"""
 
     var body: some View {
 
@@ -26,13 +31,10 @@ struct AboutSettingsTab: View {
                     Text("Version \(Bundle.main.version)")
                     Text("(Build \(Bundle.main.buildVersion))").font(.footnote)
                 }
-
-
-                Divider()
-                    .padding()
-
+//                Divider()
+//                    .padding()
             }
-
+            /*
             VStack(alignment: .leading) {
 
                 HStack() {
@@ -146,10 +148,11 @@ struct AboutSettingsTab: View {
                 Spacer()
 
             }
-
+            */
+            //Spacer()
+            Text(description).font(.footnote).padding(.top)
             Spacer()
-
-            Text("Made with ❤️ by Alin Lupascu (dev@itsalin.com)").font(.footnote).padding(.bottom)
+            //Text("Made with ❤️ by Alin Lupascu (dev@itsalin.com)").font(.footnote).padding(.bottom)
         }
         .padding(20)
         .frame(width: 500, height: 600)

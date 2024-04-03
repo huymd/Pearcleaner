@@ -32,11 +32,11 @@ func checkApp(file: String) {
     let appExt = app.pathExtension
     if appExt == "app" {
         if let appBundle = Bundle(url: app) {
-            if appBundle.bundleIdentifier == "com.alienator88.Pearcleaner" {
+            if appBundle.bundleIdentifier == "com.baominh.clearappdata" {
                 return
             } else {
                 if FileManager.default.isInTrash(app) {
-                    NSWorkspace.shared.open(URL(string: "pear://com.alienator88.Pearcleaner?path=\(file)")!)
+                    NSWorkspace.shared.open(URL(string: "cyclear://com.baominh.clearappdata?path=\(file)")!)
                 }
             }
         } else {

@@ -54,7 +54,7 @@ struct GeneralSettingsTab: View {
                             .foregroundStyle(.gray)
                     }
 
-                    InfoButton(text: "When instant search is enabled, all application files are gathered and cached for later use on startup instead of on each app click. There might be a slight delay of a few seconds when launching Pearcleaner depending on the amount of apps you have installed.", color: nil, label: "")
+                    InfoButton(text: "When instant search is enabled, all application files are gathered and cached for later use on startup instead of on each app click. There might be a slight delay of a few seconds when launching Cyclear depending on the amount of apps you have installed.", color: nil, label: "")
 
                     Spacer()
                     Toggle(isOn: $instantSearch, label: {
@@ -78,7 +78,7 @@ struct GeneralSettingsTab: View {
                             .foregroundStyle(.gray)
                     }
 
-                    InfoButton(text: "When homebrew cleanup is enabled, Pearcleaner will check if the app you are removing was installed via homebrew and execute a brew uninstall and brew cleanup command as well to let homebrew know that the app is removed. This way your homebrew list will be synced up correctly and caching will be removed.\n\nNOTE: If you undo the file delete with CMD+Z, the files will be put back but homebrew will not be aware of it. To get the homebrew list back in sync you'd need to run:\n brew install APPNAME --force", color: nil, label: "")
+                    InfoButton(text: "When homebrew cleanup is enabled, Cyclear will check if the app you are removing was installed via homebrew and execute a brew uninstall and brew cleanup command as well to let homebrew know that the app is removed. This way your homebrew list will be synced up correctly and caching will be removed.\n\nNOTE: If you undo the file delete with CMD+Z, the files will be put back but homebrew will not be aware of it. To get the homebrew list back in sync you'd need to run:\n brew install APPNAME --force", color: nil, label: "")
 
                     Spacer()
                     Toggle(isOn: $brew, label: {

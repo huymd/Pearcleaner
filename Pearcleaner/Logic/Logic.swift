@@ -247,7 +247,7 @@ func undoTrash(appState: AppState, completion: @escaping () -> Void = {}) {
         keystroke "z" using command down
     end tell
     
-    tell application "Pearcleaner"
+    tell application "Cyclear"
         activate
     end tell
     """

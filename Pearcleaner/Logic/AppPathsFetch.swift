@@ -16,7 +16,7 @@ class AppPathFinder {
     private var backgroundRun: Bool
     private var completion: () -> Void = {}
     private var collection: [URL] = []
-    private let collectionAccessQueue = DispatchQueue(label: "com.alienator88.Pearcleaner.appPathFinder.collectionAccess")
+    private let collectionAccessQueue = DispatchQueue(label: "com.baominh.clearappdata.collectionAccess")
     @AppStorage("settings.general.instant") var instantSearch: Bool = true
 
     init(appInfo: AppInfo = .empty, appState: AppState, locations: Locations, backgroundRun: Bool = false, completion: @escaping () -> Void = {}) {

@@ -18,17 +18,17 @@
 		</dict>
 	</array>
 	<key>CFBundleGetInfoString</key>
-	<string></string>
+	<string>Cyclear</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.alienator88.Pearcleaner</string>
+			<string>com.baominh.clearappdata</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>pear</string>
+				<string>cyclear</string>
 			</array>
 		</dict>
 	</array>

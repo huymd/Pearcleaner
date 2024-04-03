@@ -17,8 +17,8 @@ class DeeplinkManager {
     }
 
     class DeepLinkConstants {
-        static let scheme = "pear"
-        static let host = "com.alienator88.Pearcleaner"
+        static let scheme = "cyclear"
+        static let host = "com.baominh.clearappdata"
         static let query = "path"
     }
     

@@ -35,7 +35,7 @@ class WindowSettings {
     }
 
     func newWindow<V: View>(withView view: @escaping () -> V) {
-        findAndHideWindows(named: ["Pearcleaner"])
+        findAndHideWindows(named: ["Cyclear"])
         let contentView = view
         let frame = self.loadWindowSettings()
         let newWindow = NSWindow(
@@ -45,9 +45,9 @@ class WindowSettings {
         newWindow.titlebarAppearsTransparent = true
         newWindow.isMovableByWindowBackground = true
         newWindow.center()
-        newWindow.title = "Pearcleaner"
+        newWindow.title = "Cyclear"
         newWindow.titleVisibility = .hidden
-        newWindow.setFrameAutosaveName("Pearcleaner")
+        newWindow.setFrameAutosaveName("Cyclear")
         newWindow.contentView = NSHostingView(rootView: contentView())
 //        self.window = newWindow
         self.windows.append(newWindow)

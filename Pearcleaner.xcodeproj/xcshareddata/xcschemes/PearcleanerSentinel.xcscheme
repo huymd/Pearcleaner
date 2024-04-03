@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C728930E2AFD51EA00C8C1CD"
-               BuildableName = "PearcleanerSentinel"
-               BlueprintName = "PearcleanerSentinel"
+               BuildableName = "CyclearSentinel"
+               BlueprintName = "CyclearSentinel"
                ReferencedContainer = "container:Pearcleaner.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C728930E2AFD51EA00C8C1CD"
-            BuildableName = "PearcleanerSentinel"
-            BlueprintName = "PearcleanerSentinel"
+            BuildableName = "CyclearSentinel"
+            BlueprintName = "CyclearSentinel"
             ReferencedContainer = "container:Pearcleaner.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C728930E2AFD51EA00C8C1CD"
-            BuildableName = "PearcleanerSentinel"
-            BlueprintName = "PearcleanerSentinel"
+            BuildableName = "CyclearSentinel"
+            BlueprintName = "CyclearSentinel"
             ReferencedContainer = "container:Pearcleaner.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

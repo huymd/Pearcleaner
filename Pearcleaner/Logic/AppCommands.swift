@@ -1,49 +1,48 @@
-//
-//  AppCommands.swift
-//  Pearcleaner
-//
-//  Created by Alin Lupascu on 10/31/23.
-//
+    //
+    //  AppCommands.swift
+    //  Pearcleaner
+    //
+    //  Created by Alin Lupascu on 10/31/23.
+    //
 
 import SwiftUI
 
 struct AppCommands: Commands {
     @AppStorage("settings.general.instant") private var instantSearch: Bool = true
-
+    
     let appState: AppState
     let locations: Locations
     let fsm: FolderSettingsManager
-
+    
     init(appState: AppState, locations: Locations, fsm: FolderSettingsManager) {
         self.appState = appState
         self.locations = locations
         self.fsm = fsm
     }
-
+    
     var body: some Commands {
-        
-        // Pearcleaner Menu
+            // Pearcleaner Menu
         CommandGroup(replacing: .appInfo) {
-
+            /*
             Button {
                 loadGithubReleases(appState: appState, manual: true)
             } label: {
                 Text("Check for Updates")
             }
             .keyboardShortcut("u", modifiers: .command)
-            
+            */
             Button {
                 withAnimation(.easeInOut(duration: 0.5)) {
-                    // Refresh Apps list
+                        // Refresh Apps list
                     updateOnMain {
                         appState.reload.toggle()
                     }
                     let sortedApps = getSortedApps(paths: fsm.folderPaths, appState: appState)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                         appState.sortedApps = []
-//                        appState.sortedApps.systemApps = []
+                            //                        appState.sortedApps.systemApps = []
                         appState.sortedApps = sortedApps
-//                        appState.sortedApps.systemApps = sortedApps.systemApps
+                            //                        appState.sortedApps.systemApps = sortedApps.systemApps
                         if instantSearch {
                             Task(priority: .high){
                                 loadAllPaths(allApps: sortedApps, appState: appState, locations: locations)
@@ -56,20 +55,17 @@ struct AppCommands: Commands {
                 Text("Refresh Apps")
             }
             .keyboardShortcut("r", modifiers: .command)
-
+            
             Button {
                 uninstallPearcleaner(appState: appState, locations: locations)
             } label: {
-                Text("Uninstall Pearcleaner")
+                Text("Uninstall Cyclear")
             }
-
+            
         }
-
         
-        
-        // Edit Menu
+            // Edit Menu
         CommandGroup(replacing: .undoRedo) {
-
             Button
             {
                 undoTrash(appState: appState) {
@@ -86,24 +82,11 @@ struct AppCommands: Commands {
                 Label("Undo Removal", systemImage: "clear")
             }
             .keyboardShortcut("z", modifiers: .command)
-
-
-//            Button
-//            {
-//                updateOnMain {
-//                    appState.currentView = .zombie
-//                }
-//            } label: {
-//                Label("Zombie", systemImage: "clear")
-//            }
-//            .keyboardShortcut("f", modifiers: .command)
-
-
+            
         }
         
-        
-        
-        // GitHub Menu
+            // GitHub Menu
+        /*
         CommandMenu(Text("GitHub", comment: "Github Repo")) {
             Button
             {
@@ -139,9 +122,7 @@ struct AppCommands: Commands {
                 Label("Submit New Issue", systemImage: "paperplane")
             }
         }
-        
-        
-        
+        */
     }
 }
 

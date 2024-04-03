@@ -17,7 +17,7 @@ struct PermView: View {
                 
                 Spacer()
                 
-                Text("Pearcleaner Permissions")
+                Text("Cyclear Permissions")
                     .font(.title)
                     .bold()
                     .padding(.vertical)
@@ -61,7 +61,7 @@ struct PermView: View {
                         .scaledToFit()
                         .frame(width: 20, height: 20)
                         .foregroundStyle(.gray)
-                    Text("Add Pearcleaner in both Privacy panes via the + or by dragging the app over the pane. If the app is already pre-populated in the list, just toggle On if neeeded. Restart app when both permissions are granted")
+                    Text("Add Cyclear in both Privacy panes via the + or by dragging the app over the pane. If the app is already pre-populated in the list, just toggle On if neeeded. Restart app when both permissions are granted")
                         .font(.callout)
                         .foregroundStyle(.gray)
                 }

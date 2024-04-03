@@ -127,7 +127,7 @@ struct FilesView: View {
                                         Text("•").foregroundStyle(Color("AccentColor"))
                                         Text("\(appState.appInfo.appVersion)").font(.title3)
                                         if appState.appInfo.appName.count < 5 {
-                                            InfoButton(text: "Pearcleaner searches for files via a combination of bundle id and app name. \(appState.appInfo.appName) has a common or short app name so there might be unrelated files found. Please check the list thoroughly before uninstalling.", color: nil, label: "")
+                                            InfoButton(text: "Cyclear searches for files via a combination of bundle id and app name. \(appState.appInfo.appName) has a common or short app name so there might be unrelated files found. Please check the list thoroughly before uninstalling.", color: nil, label: "")
                                         }
 
                                     }
@@ -407,7 +407,7 @@ struct FileDetailsItem: View {
                         .truncationMode(.tail)
                         .help(path.lastPathComponent)
                     if isNested(path: path) {
-                        InfoButton(text: "Application file is nested within subdirectories. To prevent deleting incorrect folders, Pearcleaner will leave these alone. You may manually delete the remaining folders if required.", color: nil, label: "")
+                        InfoButton(text: "Application file is nested within subdirectories. To prevent deleting incorrect folders, Cyclear will leave these alone. You may manually delete the remaining folders if required.", color: nil, label: "")
                     }
                 }
 

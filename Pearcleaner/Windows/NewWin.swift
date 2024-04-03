@@ -47,7 +47,7 @@ class NewWin: NSWindowController {
         window.titleVisibility = .hidden
         window.titlebarAppearsTransparent = true
         window.center()
-        window.title = "Pearcleaner"
+        window.title = "Cyclear"
         
     }
     

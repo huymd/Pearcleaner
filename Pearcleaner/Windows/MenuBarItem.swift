@@ -29,7 +29,7 @@ class MenuBarExtraManager {
         // Set up the status item's button
         if let button = statusItem?.button{
             if NSImage(systemSymbolName: icon, accessibilityDescription: nil) != nil {
-                button.image = NSImage(systemSymbolName: icon, accessibilityDescription: "Pearcleaner")
+                button.image = NSImage(systemSymbolName: icon, accessibilityDescription: "Cyclear")
             } else {
                 button.image = NSImage(named: icon)
 
