@@ -73,11 +73,6 @@ func checkFullDiskAccessForApp() -> Bool {
     }
 }
 
-
-
-
-
-
 // Check for access to Full Disk access
 func checkAndRequestFullDiskAccess(appState: AppState, skipAlert: Bool = false) -> Bool {
     @AppStorage("settings.permissions.disk") var diskP: Bool = false

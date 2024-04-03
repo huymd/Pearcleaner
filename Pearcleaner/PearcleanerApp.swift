@@ -53,8 +53,6 @@ struct PearcleanerApp: App {
                     }
 
                 }
-
-
             }
             .environmentObject(appState)
             .environmentObject(locations)
@@ -117,14 +115,13 @@ struct PearcleanerApp: App {
                             .preferredColorScheme(displayMode.colorScheme)
                     }, icon: selectedMenubarIcon)
                 }
-
                 
+                    // Check for disk/accessibility permissions just once on initial app launch
                 if !hasLaunched {
                     let _ = checkAndRequestFullDiskAccess(appState: appState, skipAlert: true)
                     let _ = checkAndRequestAccessibilityAccess(appState: appState)
                     hasLaunched = true
                 }
-                
 #if !DEBUG
                 Task {
 
@@ -165,13 +162,9 @@ struct PearcleanerApp: App {
         .windowResizability(.contentMinSize)
         .commands {
             AppCommands(appState: appState, locations: locations, fsm: fsm)
-//            CommandGroup(replacing: .newItem, addition: { })
-            
+            //CommandGroup(replacing: .newItem, addition: { })
         }
 
-
-
-        
         Settings {
             SettingsView(showPopover: $showPopover, search: $search, showFeature: $showFeature)
                 .environmentObject(appState)

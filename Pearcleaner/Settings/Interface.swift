@@ -26,7 +26,7 @@ struct InterfaceSettingsTab: View {
     @AppStorage("settings.interface.selectedMenubarIcon") var selectedMenubarIcon: String = "pear-4"
     private let themes = ["Auto", "Dark", "Light"]
     @State private var isLaunchAtLoginEnabled: Bool = false
-    let icons = ["externaldrive", "trash", "folder", "pear-1", "pear-1.5", "pear-2", "pear-3", "pear-4"]
+    let icons = ["externaldrive", "trash", "folder"]
 
     @Binding var showPopover: Bool
     @Binding var search: String
