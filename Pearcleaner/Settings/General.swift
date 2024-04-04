@@ -91,7 +91,7 @@ struct GeneralSettingsTab: View {
 
                 // === Perms ================================================================================================
 
-
+                /*
                 Divider()
                     .padding()
 
@@ -152,7 +152,7 @@ struct GeneralSettingsTab: View {
                 .padding(5)
                 .padding(.leading)
 
-
+                */
                 // === Sentinel =============================================================================================
 
                 Divider()

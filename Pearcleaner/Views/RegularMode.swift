@@ -147,7 +147,6 @@ struct AppDetailsEmptyView: View {
             Spacer()
 
             PearDropView()
-            Spacer(minLength: 16)
             Text("Drop your app here or select one from the list")
                 .font(.title3)
                 .padding(.bottom, 25)
